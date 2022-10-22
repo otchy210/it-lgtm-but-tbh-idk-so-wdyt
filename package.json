@@ -4,6 +4,8 @@
     "description": "\"It looks good to me but to be honest I don't know so what do you think?\" is the Google Chrome extention which helps you to see what \"LGTM\" stands for.",
     "main": "index.js",
     "scripts": {
+        "build": "webpack --mode production",
+        "watch": "webpack --watch --mode development",
         "test": "jest"
     },
     "repository": {
@@ -15,5 +17,11 @@
     "bugs": {
         "url": "https://github.com/otchy210/it-lgtm-but-tbh-idk-so-wdyt/issues"
     },
-    "homepage": "https://github.com/otchy210/it-lgtm-but-tbh-idk-so-wdyt#readme"
+    "homepage": "https://github.com/otchy210/it-lgtm-but-tbh-idk-so-wdyt#readme",
+    "devDependencies": {
+        "ts-loader": "^9.4.1",
+        "typescript": "^4.8.4",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0"
+    }
 }

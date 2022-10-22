@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es2022",
+        "module": "es2022",
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react-jsx",
+        "moduleResolution": "Node"
+    }
+}
