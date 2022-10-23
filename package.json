@@ -6,6 +6,8 @@
     "scripts": {
         "build": "webpack --mode production",
         "watch": "webpack --watch --mode development",
+        "lint": "eslint --no-error-on-unmatched-pattern src/*",
+        "lint:fix": "eslint --fix --no-error-on-unmatched-pattern src/*",
         "test": "jest"
     },
     "repository": {
@@ -19,6 +21,16 @@
     },
     "homepage": "https://github.com/otchy210/it-lgtm-but-tbh-idk-so-wdyt#readme",
     "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.40.1",
+        "@typescript-eslint/parser": "^5.40.1",
+        "eslint": "^8.26.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-promise": "^6.1.1",
+        "eslint-plugin-unused-imports": "^2.0.0",
+        "prettier": "^2.7.1",
         "ts-loader": "^9.4.1",
         "typescript": "^4.8.4",
         "webpack": "^5.74.0",
