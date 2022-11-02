@@ -1,8 +1,9 @@
 module.exports = {
     mode: 'development',
     entry: {
+        background: './src/background.ts',
+        popup: './src/popup.ts',
         page: './src/page.ts',
-        background: './src/background.ts'
     },
     output: {
         filename: '[name].js',

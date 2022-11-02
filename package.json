@@ -1,11 +1,11 @@
 {
     "name": "it-lgtm-but-tbh-idk-so-wdyt",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "\"It looks good to me but to be honest I don't know so what do you think?\" is the Google Chrome extention which helps you to see what \"LGTM\" stands for.",
     "main": "index.js",
     "scripts": {
-        "build:manifest": "node ./bin/build-manifest.mjs",
-        "build": "npm run build:manifest && webpack --mode production",
+        "prepare": "node ./bin/prepare.mjs",
+        "build": "npm run prepare && webpack --mode production",
         "watch": "webpack --watch --mode development",
         "lint": "eslint --no-error-on-unmatched-pattern src/*",
         "lint:fix": "eslint --fix --no-error-on-unmatched-pattern src/*",
