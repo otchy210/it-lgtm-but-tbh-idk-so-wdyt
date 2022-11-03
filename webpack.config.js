@@ -2,7 +2,7 @@ module.exports = {
     mode: 'development',
     entry: {
         background: './src/background.ts',
-        popup: './src/popup.ts',
+        popup: './src/popup.tsx',
         page: './src/page.ts',
     },
     output: {
@@ -12,14 +12,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx?$/,
                 use: 'ts-loader',
             },
         ],
     },
     resolve: {
         extensions: [
-            '.ts', '.js',
+            '.ts', '.tsx', '.js',
         ],
     },
 };
