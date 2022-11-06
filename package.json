@@ -1,6 +1,6 @@
 {
     "name": "it-lgtm-but-tbh-idk-so-wdyt",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "\"It looks good to me but to be honest I don't know so what do you think?\" is the Google Chrome extention which helps you to see what \"LGTM\" stands for.",
     "main": "index.js",
     "scripts": {
@@ -22,6 +22,7 @@
     },
     "homepage": "https://github.com/otchy210/it-lgtm-but-tbh-idk-so-wdyt#readme",
     "devDependencies": {
+        "@types/chrome": "0.0.200",
         "@types/jest": "^29.2.0",
         "@types/react": "^18.0.24",
         "@types/react-dom": "^18.0.8",
