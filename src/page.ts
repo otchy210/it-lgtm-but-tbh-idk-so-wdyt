@@ -19,11 +19,34 @@ const getTextNodeFromPoint = (elem: Element | Text, x: number, y: number): TextN
         }
     }
 };
+
+const WORD_NOT_FOUND = [-1, -1, ''];
+let lastFoundWord = WORD_NOT_FOUND;
+
 const tryShowingCard = (e: MouseEvent) => {
     const { target, x, y } = e;
     const elem = target as Element;
     const range = getTextNodeFromPoint(elem, x, y);
-    console.log(range);
+    if (!range) {
+        // hide highlight
+        // hide card
+        lastFoundWord = WORD_NOT_FOUND;
+        return;
+    }
+    const wordIndexes = range.findwordUnder(x, y);
+    if (!wordIndexes) {
+        // hide highlight
+        // hide card
+        lastFoundWord = WORD_NOT_FOUND;
+        return;
+    }
+    if (wordIndexes[0] === lastFoundWord[0] && wordIndexes[1] === lastFoundWord[1] && wordIndexes[2] === lastFoundWord[2]) {
+        // pointing to the same word as before
+        return;
+    }
+    lastFoundWord = wordIndexes;
+
+    console.log(wordIndexes);
 };
 
 let timeoutId;

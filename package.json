@@ -1,6 +1,6 @@
 {
     "name": "it-lgtm-but-tbh-idk-so-wdyt",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "\"It looks good to me but to be honest I don't know so what do you think?\" is the Google Chrome extention which helps you to see what \"LGTM\" stands for.",
     "main": "index.js",
     "scripts": {
