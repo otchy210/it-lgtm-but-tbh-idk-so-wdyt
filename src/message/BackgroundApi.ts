@@ -13,6 +13,9 @@ class BackgroundApi {
     getNow(): Promise<number> {
         return this.send('getNow') as Promise<number>;
     }
+    getWord(word: string): Promise<[string]> {
+        return this.send('getWord', { word }) as Promise<[string]>;
+    }
 }
 
 const instance = new BackgroundApi();

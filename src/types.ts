@@ -8,7 +8,7 @@ type JsonObject = {
 
 export type Json = JsonPrimitive | JsonArray | JsonObject;
 
-export type MessageAction = 'getNow';
+export type MessageAction = 'getNow' | 'getWord';
 
 export type Message = {
     action: MessageAction;
@@ -18,4 +18,8 @@ export type Message = {
 export type MessageHandler = {
     action: MessageAction;
     handle: (payload?: Json) => Promise<Json>;
+};
+
+export type WordMap = {
+    [key: string]: [string];
 };

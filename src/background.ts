@@ -1,8 +1,9 @@
 import { getNow } from './message/handlers/getNow';
+import { getWord } from './message/handlers/getWord';
 import { MessageListener } from './message/MessageListener';
 import { Json, Message } from './types';
 
-const messageListener = new MessageListener([getNow]);
+const messageListener = new MessageListener([getNow, getWord]);
 
 chrome.runtime.onMessage.addListener((message: Message, _: chrome.runtime.MessageSender, callback: (response?: Json) => void) => {
     messageListener.listen(message, callback);
