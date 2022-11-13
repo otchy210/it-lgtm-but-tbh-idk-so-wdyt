@@ -1,1 +1,11 @@
 LGTM    Looks good to me
+NVM     Never mind
+OOTO    Out of the office
+PTO     Paid time off
+RSVP    Repondez s'il vous plait
+SGTM    Sounds good to me
+SSOT    Single source of truth
+TBH     To be honest
+TMR     Tomorrow
+TY      Thank you
+WDYT    What do you think?
