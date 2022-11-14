@@ -39,7 +39,7 @@ export class TextNodeRange {
         for (const word of words) {
             const [start, end] = word;
             if (this.start(start).end(end).contains(x, y)) {
-                return [start, end, text.slice(start, end)];
+                return [start, end, text.slice(start, end).toUpperCase()];
             }
         }
     }

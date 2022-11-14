@@ -1,4 +1,6 @@
+import { WordMap } from './types';
 import { TextNodeRange } from './utils/TextNodeRange';
+import { useWordMap } from './utils/useWordMap';
 
 const isTextNode = (elem: Element | Text): elem is Text => {
     return elem.nodeType == Node.TEXT_NODE;
@@ -23,7 +25,7 @@ const getTextNodeFromPoint = (elem: Element | Text, x: number, y: number): TextN
 const WORD_NOT_FOUND = [-1, -1, ''];
 let lastFoundWord = WORD_NOT_FOUND;
 
-const tryShowingCard = (e: MouseEvent) => {
+const tryShowingCard = (e: MouseEvent, wordMap: WordMap) => {
     const { target, x, y } = e;
     const elem = target as Element;
     const range = getTextNodeFromPoint(elem, x, y);
@@ -45,16 +47,23 @@ const tryShowingCard = (e: MouseEvent) => {
         return;
     }
     lastFoundWord = wordIndexes;
+    if (!wordMap[wordIndexes[2]]) {
+        return;
+    }
 
     console.log(wordIndexes);
 };
 
-let timeoutId;
-const onMouseMove = (e: MouseEvent) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-        tryShowingCard(e);
-    }, 200);
-};
+(async () => {
+    const wordMap = await useWordMap();
 
-document.body.addEventListener('mousemove', onMouseMove);
+    let timeoutId;
+    const onMouseMove = (e: MouseEvent) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            tryShowingCard(e, wordMap);
+        }, 200);
+    };
+
+    document.body.addEventListener('mousemove', onMouseMove);
+})();

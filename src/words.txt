@@ -1,3 +1,4 @@
+IDK     I don't know
 LGTM    Looks good to me
 NVM     Never mind
 OOTO    Out of the office

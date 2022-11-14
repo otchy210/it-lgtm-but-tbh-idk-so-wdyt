@@ -1,14 +1,9 @@
 import { MessageHandler, WordMap } from '../../types';
-
-const loadWordMap = async (): Promise<WordMap> => {
-    const wordJsonUrl = chrome.runtime.getURL('./words.json');
-    const wordMap = await (await fetch(wordJsonUrl)).json();
-    return wordMap;
-};
+import { useWordMap } from '../../utils/useWordMap';
 
 let wordMap = {} as WordMap;
 const refreshWrodMap = async () => {
-    wordMap = await loadWordMap();
+    wordMap = await useWordMap();
 };
 
 refreshWrodMap();
