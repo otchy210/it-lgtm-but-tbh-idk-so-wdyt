@@ -14,7 +14,7 @@ import fs from 'fs';
 }
 
 // html files
-['popup'].forEach((fileName) => {
+['popup', 'card'].forEach((fileName) => {
     const srcPath = `./src/${fileName}.html`;
     const destPath = `./build/${fileName}.html`;
     fs.copyFileSync(srcPath, destPath);

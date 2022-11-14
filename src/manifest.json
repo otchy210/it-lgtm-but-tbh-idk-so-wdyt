@@ -13,6 +13,12 @@
             "js": ["page.js"]
         }
     ],
+    "web_accessible_resources": [
+        {
+            "resources": ["card.html"],
+            "matches": ["*://*/*"]
+        }
+    ],
     "action": {
         "default_popup": "popup.html"
     }
