@@ -10,11 +10,8 @@ class BackgroundApi {
             chrome.runtime.sendMessage(message, resolve);
         });
     }
-    getNow(): Promise<number> {
-        return this.send('getNow') as Promise<number>;
-    }
-    getWord(word: string): Promise<[string]> {
-        return this.send('getWord', { word }) as Promise<[string]>;
+    getPhrases(word: string): Promise<[string]> {
+        return this.send('getPhrases', { word }) as Promise<[string]>;
     }
 }
 

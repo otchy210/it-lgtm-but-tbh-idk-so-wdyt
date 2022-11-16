@@ -8,7 +8,7 @@ type JsonObject = {
 
 export type Json = JsonPrimitive | JsonArray | JsonObject;
 
-export type MessageAction = 'getNow' | 'getWord';
+export type MessageAction = 'getPhrases';
 
 export type Message = {
     action: MessageAction;
