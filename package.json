@@ -1,12 +1,12 @@
 {
     "name": "it-lgtm-but-tbh-idk-so-wdyt",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "\"It looks good to me but to be honest I don't know so what do you think?\" is the Google Chrome extention which helps you to see what \"LGTM\" stands for.",
     "main": "index.js",
     "scripts": {
         "prepare": "node ./bin/prepare.mjs",
         "build": "npm run prepare && webpack --mode production",
-        "watch": "webpack --watch --mode development",
+        "watch": "webpack --watch --mode production",
         "lint": "eslint --no-error-on-unmatched-pattern src/*",
         "lint:fix": "eslint --fix --no-error-on-unmatched-pattern src/*",
         "test": "jest",
@@ -27,6 +27,7 @@
         "@types/jest": "^29.2.0",
         "@types/react": "^18.0.24",
         "@types/react-dom": "^18.0.8",
+        "@types/styled-components": "^5.1.26",
         "@typescript-eslint/eslint-plugin": "^5.40.1",
         "@typescript-eslint/parser": "^5.40.1",
         "eslint": "^8.26.0",
@@ -59,6 +60,7 @@
     },
     "dependencies": {
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "styled-components": "^5.3.6"
     }
 }
