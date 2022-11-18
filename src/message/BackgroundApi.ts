@@ -13,6 +13,9 @@ class BackgroundApi {
     getPhrases(word: string): Promise<[string]> {
         return this.send('getPhrases', { word }) as Promise<[string]>;
     }
+    notifyCardLoaded(width: number, height: number): Promise<boolean> {
+        return this.send('bgNotifyCardLoaded', { width, height }) as Promise<boolean>;
+    }
 }
 
 const instance = new BackgroundApi();

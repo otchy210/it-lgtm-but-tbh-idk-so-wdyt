@@ -33,6 +33,7 @@ const Phrase = styled.div`
     padding: 4px 6px;
     line-height: 1;
     border-bottom: solid 1px ${colors.lightGrey};
+    white-space: nowrap;
     &:last-child {
         border-bottom: none;
     }
@@ -53,8 +54,7 @@ const CardPage: React.FC = () => {
             return;
         }
         const rect = outerRef.current.getBoundingClientRect();
-        console.log(rect);
-        // notify rect.width and rect.height
+        api.notifyCardLoaded(rect.width, rect.height);
     }, [phrases]);
 
     if (!phrases) {

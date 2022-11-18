@@ -8,7 +8,7 @@ type JsonObject = {
 
 export type Json = JsonPrimitive | JsonArray | JsonObject;
 
-export type MessageAction = 'getPhrases';
+export type MessageAction = 'getPhrases' | 'notifyCardLoaded' | 'bgNotifyCardLoaded';
 
 export type Message = {
     action: MessageAction;

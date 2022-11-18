@@ -1,7 +1,4 @@
-// import { Highlighter, useHighlighter } from '../page/Highlighter';
-// import { getPossibleTimeZoneIshWords, getPossibleTimeOffsetWords, PossibleWordsIndexes } from './Texts';
-
-import { Highlighter, useHighlighter } from './Highlighter';
+import { Highlighter, useHighlighter } from '../page/Highlighter';
 import { getPossiblehWords, PossibleWordsIndexes } from './Texts';
 
 export class TextNodeRange {
