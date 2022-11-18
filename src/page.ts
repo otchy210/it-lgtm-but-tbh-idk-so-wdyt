@@ -1,4 +1,5 @@
 import { WordMap } from './types';
+import { useHighlighter } from './utils/Highlighter';
 import { TextNodeRange } from './utils/TextNodeRange';
 import { useWordMap } from './utils/useWordMap';
 
@@ -27,23 +28,24 @@ let lastFoundWord = WORD_NOT_FOUND;
 
 const tryShowingCard = (e: MouseEvent, wordMap: WordMap) => {
     const { target, x, y } = e;
+    const highlighter = useHighlighter();
     const elem = target as Element;
     const range = getTextNodeFromPoint(elem, x, y);
     if (!range) {
-        // hide highlight
+        highlighter.hide();
         // hide card
         lastFoundWord = WORD_NOT_FOUND;
         return;
     }
     const wordIndexes = range.findwordUnder(x, y);
     if (!wordIndexes) {
-        // hide highlight
+        highlighter.hide();
         // hide card
         lastFoundWord = WORD_NOT_FOUND;
         return;
     }
     if (wordIndexes[0] === lastFoundWord[0] && wordIndexes[1] === lastFoundWord[1] && wordIndexes[2] === lastFoundWord[2]) {
-        // pointing to the same word as before
+        // skipping because pointing to the same word as before
         return;
     }
     lastFoundWord = wordIndexes;
@@ -51,7 +53,7 @@ const tryShowingCard = (e: MouseEvent, wordMap: WordMap) => {
         return;
     }
 
-    console.log(wordIndexes);
+    range.start(wordIndexes[0]).end(wordIndexes[1]).hightlight();
 };
 
 (async () => {

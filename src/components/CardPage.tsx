@@ -1,32 +1,29 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useBackgroundApi } from '../message/BackgroundApi';
+import { colors } from '../utils/colors';
 import GlobalStyle from './GlobalStyle';
-
-const blue = '#0a6670';
-const white = '#fff';
-const lightGrey = '#ccc';
 
 const FlexBox = styled.div`
     display: flex;
 `;
 
 const CardOuter = styled.div`
-    background-color: ${white};
+    background-color: ${colors.white};
     padding: 1px;
     border-radius: 6px;
 `;
 
 const Card = styled.div`
-    border: solid 3px ${blue};
+    border: solid 3px ${colors.blue};
     border-radius: 6px;
-    background-color: ${white};
+    background-color: ${colors.white};
 `;
 
 const Title = styled.div`
-    color: ${white};
+    color: ${colors.white};
     font-weight: bold;
-    background-color: ${blue};
+    background-color: ${colors.blue};
     padding: 4px 8px 6px 6px;
     line-height: 1;
     border-radius: 0 0 6px 0;
@@ -35,7 +32,7 @@ const Title = styled.div`
 const Phrase = styled.div`
     padding: 4px 6px;
     line-height: 1;
-    border-bottom: solid 1px ${lightGrey};
+    border-bottom: solid 1px ${colors.lightGrey};
     &:last-child {
         border-bottom: none;
     }
