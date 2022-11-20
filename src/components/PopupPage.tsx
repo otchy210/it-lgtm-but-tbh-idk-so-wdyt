@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useBackgroundApi } from '../message/BackgroundApi';
+import React, { useState } from 'react';
+import GlobalStyle from './GlobalStyle';
+import { Toggle } from './Toggle';
 
 export const PopupPage: React.FC = () => {
-    const [phrases, setPhrases] = useState<[string]>();
-    const api = useBackgroundApi();
-    useEffect(() => {
-        api.getPhrases('LGTM').then(setPhrases);
-    }, []);
+    const [enabledAll, setEnabledAll] = useState<boolean>(true);
     return (
         <>
-            <div>phrase: {phrases && phrases.join(', ')}</div>
+            <GlobalStyle />
+            <div style={{ display: 'flex', margin: '1rem' }}>
+                <Toggle id="test" checked={enabledAll} onClick={setEnabledAll} />
+            </div>
         </>
     );
 };
