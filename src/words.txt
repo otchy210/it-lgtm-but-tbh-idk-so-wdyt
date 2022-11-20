@@ -1,12 +1,43 @@
+A.K.A.  Also known as
+AFAIK   As far as I know
+AKA     Also known as
+ASAP    As soon as possible
+ATM     At the moment
+BTW     By the way
+ETA     Estimated time of arrival
+FYI     For your information
+HRS     hours
 IDK     I don't know
+IIRC    If I remember correctly
+IMHO    In my humble opinion
+IMO     In my opinion
+JFYI    Just for your information
 LGTM    Looks good to me
+LOL     Laugh out loud
+MINS    minutes
+N/A     Not available
+NA      Not available
+NP      No problem
 NVM     Never mind
 OOTO    Out of the office
+PPL     people
 PTO     Paid time off
 RSVP    Repondez s'il vous plait
 SGTM    Sounds good to me
+SMTH    something
 SSOT    Single source of truth
+STH     something
+TBA     To be announced
+TBD     To be determined
 TBH     To be honest
+THO     though
+THRU    through
+TL;DR   Too long, didn't read
+TLDR    Too long, didn't read
 TMR     Tomorrow
 TY      Thank you
+W/      with
+W/O     without
 WDYT    What do you think?
+WIP     Work in progress
+WRT     With reference to
