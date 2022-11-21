@@ -8,7 +8,7 @@ type JsonObject = {
 
 export type Json = JsonPrimitive | JsonArray | JsonObject;
 
-export type MessageAction = 'getPhrases' | 'notifyCardLoaded' | 'bgNotifyCardLoaded';
+export type MessageAction = 'getPhrases' | 'notifyCardLoaded' | 'bgNotifyCardLoaded' | 'getConfig' | 'notifyConfigChanged';
 
 export type Message = {
     action: MessageAction;
@@ -22,4 +22,10 @@ export type MessageHandler = {
 
 export type WordMap = {
     [key: string]: [string];
+};
+
+export type ConfigKey = 'popupEnabled';
+
+export type Config = {
+    popupEnabled: true;
 };

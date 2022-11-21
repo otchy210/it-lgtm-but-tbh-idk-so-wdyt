@@ -1,4 +1,4 @@
-import { Json, Message, MessageAction } from '../types';
+import { Config, Json, Message, MessageAction } from '../types';
 
 class BackgroundApi {
     private send(action: MessageAction, payload?: Json): Promise<Json> {
@@ -15,6 +15,9 @@ class BackgroundApi {
     }
     notifyCardLoaded(width: number, height: number): Promise<boolean> {
         return this.send('bgNotifyCardLoaded', { width, height }) as Promise<boolean>;
+    }
+    getConfig(): Promise<Config> {
+        return this.send('getConfig') as Promise<Config>;
     }
 }
 

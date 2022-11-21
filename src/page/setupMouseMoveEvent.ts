@@ -1,5 +1,6 @@
 import { WordMap } from '../types';
 import { TextNodeRange } from '../utils/TextNodeRange';
+import { useConfig } from '../utils/useConfig';
 import { useWordMap } from '../utils/useWordMap';
 import { useCard } from './Card';
 import { useHighlighter } from './Highlighter';
@@ -27,7 +28,11 @@ const getTextNodeFromPoint = (elem: Element | Text, x: number, y: number): TextN
 const WORD_NOT_FOUND = [-1, -1, ''];
 let lastFoundWord = WORD_NOT_FOUND;
 
-const tryShowingCard = (e: MouseEvent, wordMap: WordMap) => {
+const tryShowingCard = async (e: MouseEvent, wordMap: WordMap) => {
+    const config = await useConfig();
+    if (!config.popupEnabled) {
+        return;
+    }
     const { target, x, y } = e;
     const highlighter = useHighlighter();
     const card = useCard();
