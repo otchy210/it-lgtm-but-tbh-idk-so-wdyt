@@ -26,8 +26,8 @@ class Storage {
     }
 }
 
-// const syncStorage = new Storage(chrome.storage.sync);
+const syncStorage = new Storage(chrome.storage.sync);
 const localStorage = new Storage(chrome.storage.local);
 
-// export const useSyncStorage = () => syncStorage;
+export const useSyncStorage = () => syncStorage;
 export const useLocalStorage = () => localStorage;

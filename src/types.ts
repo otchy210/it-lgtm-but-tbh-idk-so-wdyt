@@ -21,11 +21,12 @@ export type MessageHandler = {
 };
 
 export type WordMap = {
-    [key: string]: [string];
+    [key: string]: string[];
 };
 
-export type ConfigKey = 'popupEnabled';
+export type ConfigKey = 'popupEnabled' | 'disabledWords';
 
 export type Config = {
     popupEnabled: true;
+    disabledWords: string[];
 };
