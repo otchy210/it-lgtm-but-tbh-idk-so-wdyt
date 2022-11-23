@@ -56,12 +56,16 @@ const tryShowingCard = async (e: MouseEvent, wordMap: WordMap) => {
         return;
     }
     lastFoundWord = wordIndexes;
-    if (!wordMap[wordIndexes[2]]) {
+    const [start, end, word] = wordIndexes;
+    if (!wordMap[word]) {
+        return;
+    }
+    if (config.disabledWords.has(word.toUpperCase())) {
         return;
     }
 
-    range.start(wordIndexes[0]).end(wordIndexes[1]).hightlight();
-    card.set(wordIndexes[2]);
+    range.start(start).end(end).hightlight();
+    card.set(word);
 };
 
 export const setupMouseMoveEvent = async () => {

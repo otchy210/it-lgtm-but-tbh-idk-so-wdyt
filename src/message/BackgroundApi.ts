@@ -16,8 +16,12 @@ class BackgroundApi {
     notifyCardLoaded(width: number, height: number): Promise<boolean> {
         return this.send('bgNotifyCardLoaded', { width, height }) as Promise<boolean>;
     }
-    getConfig(): Promise<Config> {
-        return this.send('getConfig') as Promise<Config>;
+    async getConfig(): Promise<Config> {
+        const jsonConfig = await this.send('getConfig');
+        return {
+            popupEnabled: jsonConfig['popupEnabled'],
+            disabledWords: new Set<string>(jsonConfig['disabledWords']),
+        } as Config;
     }
 }
 

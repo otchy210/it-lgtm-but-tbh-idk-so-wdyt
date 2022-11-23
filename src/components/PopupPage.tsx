@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { WordMap } from '../types';
 import { colors } from '../utils/colors';
 import { useLocalStorage, useSyncStorage } from '../utils/Storage';
+import { sendMessage } from '../utils/Tabs';
 import { useWordMap } from '../utils/useWordMap';
 import GlobalStyle from './GlobalStyle';
 import { Toggle } from './Toggle';
@@ -100,6 +101,7 @@ export const PopupPage: React.FC = () => {
     const setPopupEnabled = (popupEnabled: boolean) => {
         setPopupEnabledState(popupEnabled);
         localStorage.setConfig('popupEnabled', popupEnabled);
+        sendMessage({ action: 'notifyConfigChanged' });
     };
     const onClickEnabledWord = (word: string, checked: boolean) => {
         const newState = new Set(disabledWords);
@@ -110,6 +112,7 @@ export const PopupPage: React.FC = () => {
         }
         syncStorage.setConfig('disabledWords', Array.from(newState));
         setDisabledWordsState(newState);
+        sendMessage({ action: 'notifyConfigChanged' });
     };
     return (
         <>

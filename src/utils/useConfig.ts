@@ -1,10 +1,12 @@
 import { useBackgroundApi } from '../message/BackgroundApi';
 import { Config } from '../types';
 
-let config;
+let config: Config;
 
 export const useConfig = async (): Promise<Config> => {
-    await updateConfig();
+    if (config === undefined) {
+        await updateConfig();
+    }
     return config;
 };
 

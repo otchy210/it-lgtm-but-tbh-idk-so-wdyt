@@ -28,5 +28,5 @@ export type ConfigKey = 'popupEnabled' | 'disabledWords';
 
 export type Config = {
     popupEnabled: true;
-    disabledWords: string[];
+    disabledWords: Set<string>;
 };
