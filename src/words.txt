@@ -6,7 +6,7 @@ ATM     At the moment
 BTW     By the way
 ETA     Estimated time of arrival
 FYI     For your information
-HRS     hours
+HRS     Hours
 IDK     I don't know
 IIRC    If I remember correctly
 IMHO    In my humble opinion
@@ -14,30 +14,33 @@ IMO     In my opinion
 JFYI    Just for your information
 LGTM    Looks good to me
 LOL     Laugh out loud
-MINS    minutes
+MINS    Minutes
 N/A     Not available
 NA      Not available
 NP      No problem
+NSFW    Not safe for work (https://en.wikipedia.org/wiki/Not_safe_for_work)
 NVM     Never mind
 OOTO    Out of the office
-PPL     people
+PPL     People
 PTO     Paid time off
 RSVP    Repondez s'il vous plait
 SGTM    Sounds good to me
-SMTH    something
+SMTH    Something
 SSOT    Single source of truth
-STH     something
+STH     Something
 TBA     To be announced
 TBD     To be determined
 TBH     To be honest
-THO     though
-THRU    through
-TL;DR   Too long, didn't read
-TLDR    Too long, didn't read
+THO     Though
+THRU    Through
+TIL     Today I learned
+TL;DR   Too long, didn't read (https://en.wikipedia.org/wiki/TL;DR)
+TLDR    Too long, didn't read (https://en.wikipedia.org/wiki/TL;DR)
+TMI     Too much information
 TMR     Tomorrow
 TY      Thank you
-W/      with
-W/O     without
-WDYT    What do you think?
+W/      With
+W/O     Without
+WDYT    What do you think
 WIP     Work in progress
 WRT     With reference to
