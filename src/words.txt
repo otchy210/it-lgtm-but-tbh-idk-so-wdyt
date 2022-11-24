@@ -13,7 +13,7 @@ IMHO    In my humble opinion
 IMO     In my opinion
 JFYI    Just for your information
 LGTM    Looks good to me
-LOL     Laugh out loud
+LOL     Laugh out loud (https://en.wikipedia.org/wiki/LOL)
 MINS    Minutes
 N/A     Not available
 NA      Not available
@@ -23,7 +23,7 @@ NVM     Never mind
 OOTO    Out of the office
 PPL     People
 PTO     Paid time off
-RSVP    Repondez s'il vous plait
+RSVP    Repondez s'il vous plait (https://en.wikipedia.org/wiki/RSVP)
 SGTM    Sounds good to me
 SMTH    Something
 SSOT    Single source of truth
