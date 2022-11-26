@@ -20,6 +20,14 @@ import fs from 'fs';
     fs.copyFileSync(srcPath, destPath);
 });
 
+// image files
+fs.mkdirSync('./build/images', { recursive: true });
+fs.readdirSync('./images')
+    .filter((fileName) => fileName.endsWith('.png'))
+    .forEach((fileName) => {
+        fs.copyFileSync(`./images/${fileName}`, `./build/images/${fileName}`);
+    });
+
 // words.txt -> words.json
 {
     const srcPath = './src/words.txt';
