@@ -8,7 +8,6 @@ class Card {
         this.iframe.style.left = '-9999px';
         this.iframe.style.top = '0';
         this.iframe.style.zIndex = '99999';
-        this.iframe.style.pointerEvents = 'none';
         document.body.appendChild(this.iframe);
 
         this.baseURL = chrome.runtime.getURL('card.html');
@@ -31,6 +30,9 @@ class Card {
     hide(): Card {
         this.iframe.style.left = '-9999px';
         return this;
+    }
+    isIframe(elem: Element): boolean {
+        return this.iframe === elem;
     }
 }
 

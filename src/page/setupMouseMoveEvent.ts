@@ -34,9 +34,13 @@ const tryShowingCard = async (e: MouseEvent, wordMap: WordMap) => {
         return;
     }
     const { target, x, y } = e;
-    const highlighter = useHighlighter();
-    const card = useCard();
     const elem = target as Element;
+    const card = useCard();
+    if (card.isIframe(elem)) {
+        // do nothing when the cursor is hovering on the card
+        return;
+    }
+    const highlighter = useHighlighter();
     const range = getTextNodeFromPoint(elem, x, y);
     if (!range) {
         highlighter.hide();
@@ -57,10 +61,9 @@ const tryShowingCard = async (e: MouseEvent, wordMap: WordMap) => {
     }
     lastFoundWord = wordIndexes;
     const [start, end, word] = wordIndexes;
-    if (!wordMap[word]) {
-        return;
-    }
-    if (config.disabledWords.has(word.toUpperCase())) {
+    if (!wordMap[word] || config.disabledWords.has(word.toUpperCase())) {
+        highlighter.hide();
+        card.hide();
         return;
     }
 
