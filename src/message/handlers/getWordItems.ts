@@ -8,8 +8,8 @@ const refreshWrodMap = async () => {
 
 refreshWrodMap();
 
-export const getPhrases: MessageHandler = {
-    action: 'getPhrases',
+export const getWordItems: MessageHandler = {
+    action: 'getWordItems',
     handle: async (payload) => {
         const word = payload['word'];
         return wordMap[word];

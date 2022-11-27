@@ -24,7 +24,7 @@ import fs from 'fs';
 fs.mkdirSync('./build/images', { recursive: true });
 fs.readdirSync('./images')
     .filter((fileName) => {
-        return fileName.endsWith('.png') || fileName === 'search.svg';
+        return fileName.startsWith('icon');
     })
     .forEach((fileName) => {
         fs.copyFileSync(`./images/${fileName}`, `./build/images/${fileName}`);
@@ -34,6 +34,7 @@ fs.readdirSync('./images')
 {
     const srcPath = './src/words.txt';
     const destPath = './build/words.json';
+    const urlRegex = /(.+)\s*\(\s*(https?:\/\/[^)]+)\s*\)\s*$/;
     const map = fs.readFileSync(srcPath)
         .toString()
         .split('\n')
@@ -47,16 +48,24 @@ fs.readdirSync('./images')
             if (abbr.length === 0 || desc.length === 0) {
                 return [];
             }
-            return [abbr, desc];
+            const retrieved = urlRegex.exec(desc);
+            if (retrieved && retrieved[2]) {
+                return [abbr, retrieved[1].trim(), retrieved[2].trim()];
+            } else {
+                return [abbr, desc];
+            }
         })
         .filter((item) => {
-            return item.length === 2;
+            return item.length !== 0;
         })
-        .reduce((map, [abbr, desc]) => {
-            if (map[abbr]) {
-                map[abbr].push(desc);
+        .reduce((map, [abbr, desc, url]) => {
+            if (!map[abbr]) {
+                map[abbr] = [];
+            }
+            if (url) {
+                map[abbr].push([desc, url]);
             } else {
-                map[abbr] = [desc];
+                map[abbr].push([desc]);
             }
             return map;
         }, {});

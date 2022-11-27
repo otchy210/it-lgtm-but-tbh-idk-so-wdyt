@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useBackgroundApi } from '../message/BackgroundApi';
+import { WordItem } from '../types';
 import { colors } from '../utils/colors';
 import GlobalStyle from './GlobalStyle';
 
@@ -39,25 +40,40 @@ const Phrase = styled.div`
     }
 `;
 
+const linkSvg = chrome.runtime.getURL('images/icon-link.svg');
+const Link = styled.a.attrs({ target: '_blank' })`
+    display: inline-box;
+    padding-right: 16px;
+    color: ${colors.darkGrey};
+    text-decoration: none;
+    background-image: url(${linkSvg});
+    background-repeat: no-repeat;
+    background-position: right center;
+    &:hover {
+        color: ${colors.blue};
+        text-decoration: underline;
+    }
+`;
+
 const CardPage: React.FC = () => {
     const url = new URL(location.href);
     const word = url.searchParams.get('word');
     const outerRef = useRef<HTMLDivElement>();
-    const [phrases, setPhrases] = useState<[string]>();
+    const [wordItems, setWordItems] = useState<WordItem[]>();
     const api = useBackgroundApi();
 
     useEffect(() => {
-        api.getPhrases(word).then(setPhrases);
+        api.getWordItems(word).then(setWordItems);
     }, [word]);
     useEffect(() => {
-        if (!phrases || !outerRef.current) {
+        if (!wordItems || !outerRef.current) {
             return;
         }
         const rect = outerRef.current.getBoundingClientRect();
         api.notifyCardLoaded(rect.width, rect.height);
-    }, [phrases]);
+    }, [wordItems]);
 
-    if (!phrases) {
+    if (!wordItems) {
         return null;
     }
 
@@ -70,8 +86,16 @@ const CardPage: React.FC = () => {
                         <FlexBox>
                             <Title>{word}</Title>
                         </FlexBox>
-                        {phrases.map((phrase) => {
-                            return <Phrase>{phrase}</Phrase>;
+                        {wordItems.map(([desc, url]) => {
+                            if (url) {
+                                return (
+                                    <Phrase>
+                                        <Link href={url}>{desc}</Link>
+                                    </Phrase>
+                                );
+                            } else {
+                                return <Phrase>{desc}</Phrase>;
+                            }
                         })}
                     </Card>
                 </CardOuter>

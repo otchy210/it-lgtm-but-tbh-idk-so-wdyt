@@ -43,7 +43,7 @@ const ConfigValue = styled.div`
     padding: 0 4px;
 `;
 
-const searchSvg = chrome.runtime.getURL('images/search.svg');
+const searchSvg = chrome.runtime.getURL('images/icon-search.svg');
 const QueryField = styled.input`
     border: solid 1px ${colors.lightGrey};
     border-radius: 24px;

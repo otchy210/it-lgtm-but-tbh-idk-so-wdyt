@@ -1,4 +1,4 @@
-import { Config, Json, Message, MessageAction } from '../types';
+import { Config, Json, Message, MessageAction, WordItem } from '../types';
 
 class BackgroundApi {
     private send(action: MessageAction, payload?: Json): Promise<Json> {
@@ -10,8 +10,8 @@ class BackgroundApi {
             chrome.runtime.sendMessage(message, resolve);
         });
     }
-    getPhrases(word: string): Promise<[string]> {
-        return this.send('getPhrases', { word }) as Promise<[string]>;
+    getWordItems(word: string): Promise<WordItem[]> {
+        return this.send('getWordItems', { word }) as Promise<WordItem[]>;
     }
     notifyCardLoaded(width: number, height: number): Promise<boolean> {
         return this.send('bgNotifyCardLoaded', { width, height }) as Promise<boolean>;

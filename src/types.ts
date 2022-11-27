@@ -8,7 +8,7 @@ type JsonObject = {
 
 export type Json = JsonPrimitive | JsonArray | JsonObject;
 
-export type MessageAction = 'getPhrases' | 'notifyCardLoaded' | 'bgNotifyCardLoaded' | 'getConfig' | 'notifyConfigChanged';
+export type MessageAction = 'getWordItems' | 'notifyCardLoaded' | 'bgNotifyCardLoaded' | 'getConfig' | 'notifyConfigChanged';
 
 export type Message = {
     action: MessageAction;
@@ -20,8 +20,10 @@ export type MessageHandler = {
     handle: (payload?: Json) => Promise<Json>;
 };
 
+export type WordItem = [desc: string, url?: string];
+
 export type WordMap = {
-    [key: string]: string[];
+    [key: string]: WordItem[];
 };
 
 export type ConfigKey = 'popupEnabled' | 'disabledWords';
