@@ -43,6 +43,22 @@ const ConfigValue = styled.div`
     padding: 0 4px;
 `;
 
+const searchSvg = chrome.runtime.getURL('images/search.svg');
+const QueryField = styled.input`
+    border: solid 1px ${colors.lightGrey};
+    border-radius: 24px;
+    width: 100%;
+    height: 24px;
+    padding: 2px 12px 2px 24px;
+    outline: none;
+    background-image: url(${searchSvg});
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    &:focus-visible {
+        border-color: ${colors.blue};
+    }
+`;
+
 type DisabledWordsConfigProps = {
     disabledWords: Set<string>;
     wordMap: WordMap;
@@ -50,11 +66,25 @@ type DisabledWordsConfigProps = {
 };
 
 const DisabledWordsConfig: React.FC<DisabledWordsConfigProps> = ({ disabledWords, wordMap, onClick }) => {
+    const [query, setQueryStatus] = useState<string>('');
+
+    const setQuery = (query) => {
+        setQueryStatus(query.trim());
+    };
     return (
         <ConfigGroup>
             <ConfigGroupTitle>Word config</ConfigGroupTitle>
+            <ConfigItem>
+                <QueryField value={query} onChange={(e) => setQuery(e.target.value)} />
+            </ConfigItem>
             <ConfigItemContainer>
                 {Object.keys(wordMap)
+                    .filter((word) => {
+                        if (query.length === 0) {
+                            return true;
+                        }
+                        return word.includes(query.toUpperCase());
+                    })
                     .sort()
                     .map((word) => {
                         const chedked = !disabledWords.has(word);

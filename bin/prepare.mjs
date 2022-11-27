@@ -23,7 +23,9 @@ import fs from 'fs';
 // image files
 fs.mkdirSync('./build/images', { recursive: true });
 fs.readdirSync('./images')
-    .filter((fileName) => fileName.endsWith('.png'))
+    .filter((fileName) => {
+        return fileName.endsWith('.png') || fileName === 'search.svg';
+    })
     .forEach((fileName) => {
         fs.copyFileSync(`./images/${fileName}`, `./build/images/${fileName}`);
     });

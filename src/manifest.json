@@ -15,7 +15,7 @@
     ],
     "web_accessible_resources": [
         {
-            "resources": ["card.html", "words.json"],
+            "resources": ["card.html", "words.json", "images/*.svg"],
             "matches": ["*://*/*"]
         }
     ],
