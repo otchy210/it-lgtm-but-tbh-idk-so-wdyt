@@ -1,16 +1,17 @@
 {
     "name": "it-lgtm-but-tbh-idk-so-wdyt",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "description": "\"It looks good to me but to be honest I don't know so what do you think?\" is the Google Chrome extention which helps you to see what \"LGTM\" stands for.",
     "main": "index.js",
     "scripts": {
-        "prepare": "node ./bin/prepare.mjs",
+        "sort": "cat src/words.txt | sort > src/words.tmp && mv src/words.tmp src/words.txt",
+        "prepare": "npm run sort && node ./bin/prepare.mjs",
         "build": "npm run prepare && webpack --mode production",
+        "dist": "npm run build && node bin/dist.mjs",
         "watch": "npm run prepare && webpack --watch --mode production",
         "lint": "eslint --no-error-on-unmatched-pattern src/*",
         "lint:fix": "eslint --fix --no-error-on-unmatched-pattern src/*",
-        "test": "jest",
-        "sort": "cat src/words.txt | sort > src/words.tmp && mv src/words.tmp src/words.txt"
+        "test": "jest"
     },
     "repository": {
         "type": "git",
