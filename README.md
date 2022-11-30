@@ -6,7 +6,7 @@
 
 The intention of this extension is to help non-native English speakers to read casual English messages easily. So this extension allows you to disable the popup per word based on how much you remember it.
 
-You can find the list of all abbreviations this extension suppors on [this page](https://github.com/otchy210/it-lgtm-but-tbh-idk-so-wdyt/blob/main/src/words.txt).
+You can find the list of all abbreviations this extension supports on [this page](https://github.com/otchy210/it-lgtm-but-tbh-idk-so-wdyt/blob/main/src/words.txt).
 
 ![How it works](images/how-it-works.gif)
 
