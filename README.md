@@ -1,8 +1,44 @@
-# ![It LGTM but TBH IDK so WDYT](images/logo.svg)
+# It LGTM but TBH IDK so WDYT
 
-"It looks good to me but to be honest I don't know so what do you think?" is the Google Chrome extention which helps you to see what "LGTM" stands for.
+![It LGTM but TBH IDK so WDYT](images/logo.svg)
+
+"It LGTM but TBH IDK so WDYT" pronounced as "It looks good to me but to be honest I don't know so what do you think" is a simple Chrome extension that shows a small popup to describe what it is when you hover your cursor on an abbreviation.
+
+The intention of this extension is to help non-native English speakers to read casual English messages easily. So this extension allows you to disable the popup per word based on how much you remember it.
+
+You can find the list of all abbreviations this extension suppors on [this page](https://github.com/otchy210/it-lgtm-but-tbh-idk-so-wdyt/blob/main/src/words.txt).
 
 ![How it works](images/how-it-works.gif)
+
+## Contribution is welcomed!
+
+If you have abbreviations you want to add, don't hesitate to send PR! However, there is a policy describing what I want to add and what I don't want to add.
+
+### What I want
+
+I want to add only widely used abbreviations to avoid expanding the list chaotically. Followins are good examples to add.
+
+-   **Super** commonly used internet slang, for example, ones which have entries in Wikipedia or Oxford dictionary
+    -   ex. LOL, TL;DR
+-   Commonly used shorthand of phrase
+    -   ex. ASAP, LGTM
+-   Commonly used shorthand of word
+    -   ex. SMTH, THO, MINS
+
+### What I don't want
+
+I don't want to add shorthand of proper noun, not so popular internet slang, video game jargon, and maybe more, again, to avoid expanding the list chaotically.
+
+-   Name of organization
+    -   ex. BBC, NYT
+-   Name of specification
+    -   ex. ISBN, RFC, IEEE
+-   Game jargon
+    -   ex. GG, PK
+
+## Changelog
+
+-   1.0.0 [2022-12-01] Initial version
 
 ## Development
 
