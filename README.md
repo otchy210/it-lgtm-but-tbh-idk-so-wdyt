@@ -16,7 +16,7 @@ If you have abbreviations you want to add, don't hesitate to send PR! However, t
 
 ### What I want
 
-I want to add only widely used abbreviations to avoid expanding the list chaotically. Followins are good examples to add.
+I want to add only widely used abbreviations to avoid expanding the list chaotically. Followings are good examples to add.
 
 -   **Super** commonly used internet slang, for example, ones which have entries in Wikipedia or Oxford dictionary
     -   ex. LOL, TL;DR
