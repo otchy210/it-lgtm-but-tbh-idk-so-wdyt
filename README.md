@@ -10,6 +10,10 @@ You can find the list of all abbreviations this extension supports on [this page
 
 ![How it works](images/how-it-works.gif)
 
+## Install
+
+You can install this from the [Chrome Webstore](https://chrome.google.com/webstore/detail/it-lgtm-but-tbh-idk-so-wd/djgmnhkpcfhhmnkajphahjanfebedfeo/).
+
 ## Contribution is welcomed!
 
 If you have abbreviations you want to add, don't hesitate to send PR! However, there is a policy describing what I want to add and what I don't want to add.
