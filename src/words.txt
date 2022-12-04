@@ -12,9 +12,9 @@ IIRC    If I remember correctly
 IMHO    In my humble opinion
 IMO     In my opinion
 JFYI    Just for your information
-JFYI    Just for your information
 LGTM    Looks good to me
 LOL     Laugh out loud (https://en.wikipedia.org/wiki/LOL)
+MGMT    Management
 MINS    Minutes
 N/A     Not available
 NA      Not available
