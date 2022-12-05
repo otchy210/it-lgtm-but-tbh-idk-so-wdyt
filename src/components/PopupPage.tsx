@@ -6,6 +6,7 @@ import { useLocalStorage, useSyncStorage } from '../utils/Storage';
 import { sendMessage } from '../utils/Tabs';
 import { useWordMap } from '../utils/useWordMap';
 import GlobalStyle from './GlobalStyle';
+import { Link } from './Link';
 import { Toggle } from './Toggle';
 
 const ConfigGroup = styled.div`
@@ -154,6 +155,11 @@ export const PopupPage: React.FC = () => {
                     <ConfigValue>
                         <Toggle id="popupEnabled" checked={popupEnabled} onClick={setPopupEnabled} />
                     </ConfigValue>
+                </ConfigItem>
+                <ConfigItem>
+                    <ConfigName>
+                        <Link href="https://chrome.google.com/webstore/detail/it-lgtm-but-tbh-idk-so-wd/djgmnhkpcfhhmnkajphahjanfebedfeo">Open Web Store</Link>
+                    </ConfigName>
                 </ConfigItem>
             </ConfigGroup>
             {popupEnabled && <DisabledWordsConfig {...{ disabledWords, wordMap, onClick: onClickEnabledWord }} />}

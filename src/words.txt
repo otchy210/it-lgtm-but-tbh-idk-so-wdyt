@@ -4,6 +4,7 @@ AKA     Also known as
 ASAP    As soon as possible
 ATM     At the moment
 BTW     By the way
+EOD     End of day
 ETA     Estimated time of arrival
 FYI     For your information
 HRS     Hours
@@ -26,6 +27,7 @@ POC     Point of contact
 POC     Proof of concept
 POV     Point of view
 PPL     People
+PTAL    Please take another look
 PTO     Paid time off
 QQ      Quick question
 RSVP    Repondez s'il vous plait (https://en.wikipedia.org/wiki/RSVP)
