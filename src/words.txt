@@ -3,6 +3,7 @@ AFAIK   As far as I know
 AKA     Also known as
 ASAP    As soon as possible
 ATM     At the moment
+BRB     Be right back
 BTW     By the way
 EOD     End of day
 ETA     Estimated time of arrival
@@ -23,6 +24,7 @@ NP      No problem
 NSFW    Not safe for work (https://en.wikipedia.org/wiki/Not_safe_for_work)
 NVM     Never mind
 OOTO    Out of the office
+PLS     Please
 POC     Point of contact
 POC     Proof of concept
 POV     Point of view

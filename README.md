@@ -45,6 +45,7 @@ I don't want to add shorthand of proper noun, not so popular internet slang, vid
 -   1.0.0 [2022-12-01] Initial version
 -   1.0.1 [2022-12-04] Remove duplicate word and add MGMT
 -   1.0.2 [2022-12-05] Add Web Store link in the popup and add EOD, PTAL
+-   1.0.3 [2022-12-09] Add BRB, PLS
 
 ## Development
 
