@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { WordMap } from '../types';
 import { colors } from '../utils/colors';
@@ -61,13 +61,21 @@ const QueryField = styled.input`
 `;
 
 type DisabledWordsConfigProps = {
+    loading: boolean;
     disabledWords: Set<string>;
     wordMap: WordMap;
     onClick: (word: string, checked: boolean) => void;
 };
 
-const DisabledWordsConfig: React.FC<DisabledWordsConfigProps> = ({ disabledWords, wordMap, onClick }) => {
+const DisabledWordsConfig: React.FC<DisabledWordsConfigProps> = ({ loading, disabledWords, wordMap, onClick }) => {
     const [query, setQueryStatus] = useState<string>('');
+    const queryRef = useRef<HTMLInputElement>();
+
+    useEffect(() => {
+        if (!loading && queryRef.current) {
+            queryRef.current.focus();
+        }
+    }, [loading]);
 
     const setQuery = (query) => {
         setQueryStatus(query.trim());
@@ -76,7 +84,7 @@ const DisabledWordsConfig: React.FC<DisabledWordsConfigProps> = ({ disabledWords
         <ConfigGroup>
             <ConfigGroupTitle>Word config</ConfigGroupTitle>
             <ConfigItem>
-                <QueryField value={query} onChange={(e) => setQuery(e.target.value)} />
+                <QueryField value={query} ref={queryRef} onChange={(e) => setQuery(e.target.value)} />
             </ConfigItem>
             <ConfigItemContainer>
                 {Object.keys(wordMap)
@@ -90,7 +98,7 @@ const DisabledWordsConfig: React.FC<DisabledWordsConfigProps> = ({ disabledWords
                     .map((word) => {
                         const chedked = !disabledWords.has(word);
                         return (
-                            <ConfigItem>
+                            <ConfigItem key={word}>
                                 <ConfigName>{word}</ConfigName>
                                 <ConfigValue>
                                     <Toggle
@@ -162,7 +170,7 @@ export const PopupPage: React.FC = () => {
                     </ConfigName>
                 </ConfigItem>
             </ConfigGroup>
-            {popupEnabled && <DisabledWordsConfig {...{ disabledWords, wordMap, onClick: onClickEnabledWord }} />}
+            {popupEnabled && <DisabledWordsConfig {...{ loading, disabledWords, wordMap, onClick: onClickEnabledWord }} />}
         </>
     );
 };
