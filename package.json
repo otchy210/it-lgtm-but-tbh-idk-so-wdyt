@@ -1,6 +1,6 @@
 {
     "name": "it-lgtm-but-tbh-idk-so-wdyt",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "The Google Chrome extention which helps you to see what \"LGTM\" stands for.",
     "main": "index.js",
     "scripts": {

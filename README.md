@@ -47,6 +47,7 @@ I don't want to add shorthand of proper noun, not so popular internet slang, vid
 -   1.0.2 [2022-12-05] Add Web Store link in the popup and add EOD, PTAL
 -   1.0.3 [2022-12-09] Add BRB, PLS
 -   1.0.4 [2022-12-14] Fix tiny UI bug / Focus on query form automatically
+-   1.0.5 [2022-12-15] Add AFK, BC, BFF, FWD
 
 ## Development
 
