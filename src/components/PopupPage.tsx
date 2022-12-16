@@ -5,44 +5,16 @@ import { colors } from '../utils/colors';
 import { useLocalStorage, useSyncStorage } from '../utils/Storage';
 import { sendMessage } from '../utils/Tabs';
 import { useWordMap } from '../utils/useWordMap';
+import { ConfigGroup } from './config/ConfigGroup';
+import { ConfigGroupTitle } from './config/ConfigGroupTitle';
+import { ConfigItem } from './config/ConfigItem';
+import { ConfigItemContainer } from './config/ConfigItemContainer';
+import { ConfigName } from './config/ConfigName';
+import { ConfigValue } from './config/ConfigValue';
+import { ConfigWord } from './config/ConfigWord';
 import GlobalStyle from './GlobalStyle';
 import { Link } from './Link';
 import { Toggle } from './Toggle';
-
-const ConfigGroup = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 8px;
-`;
-
-const ConfigGroupTitle = styled.div`
-    white-space: nowrap;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 2px;
-    border-bottom: solid 1px ${colors.lightGrey};
-`;
-
-const ConfigItemContainer = styled.div`
-    max-height: 200px;
-    overflow: auto;
-`;
-
-const ConfigItem = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2px;
-`;
-
-const ConfigName = styled.div`
-    white-space: nowrap;
-    padding: 0 4px;
-`;
-
-const ConfigValue = styled.div`
-    padding: 0 4px;
-`;
 
 const searchSvg = chrome.runtime.getURL('images/icon-search.svg');
 const QueryField = styled.input`
@@ -87,30 +59,17 @@ const DisabledWordsConfig: React.FC<DisabledWordsConfigProps> = ({ loading, disa
                 <QueryField value={query} ref={queryRef} onChange={(e) => setQuery(e.target.value)} />
             </ConfigItem>
             <ConfigItemContainer>
-                {Object.keys(wordMap)
-                    .filter((word) => {
+                {Object.entries(wordMap)
+                    .filter(([word]) => {
                         if (query.length === 0) {
                             return true;
                         }
                         return word.includes(query.toUpperCase());
                     })
                     .sort()
-                    .map((word) => {
-                        const chedked = !disabledWords.has(word);
-                        return (
-                            <ConfigItem key={word}>
-                                <ConfigName>{word}</ConfigName>
-                                <ConfigValue>
-                                    <Toggle
-                                        id={word}
-                                        checked={chedked}
-                                        onClick={(checked) => {
-                                            onClick(word, checked);
-                                        }}
-                                    />
-                                </ConfigValue>
-                            </ConfigItem>
-                        );
+                    .map(([word, items]) => {
+                        const checked = !disabledWords.has(word);
+                        return <ConfigWord {...{ word, items, checked, onClick }} />;
                     })}
             </ConfigItemContainer>
         </ConfigGroup>
