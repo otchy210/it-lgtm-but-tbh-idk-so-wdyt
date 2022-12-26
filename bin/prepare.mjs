@@ -10,6 +10,7 @@ import fs from 'fs';
     ['description', 'version'].forEach((field) => {
         destJson[field] = packageJson[field];
     });
+    fs.mkdirSync('./build/', {recursive: true});
     fs.writeFileSync(destPath, JSON.stringify(destJson, null, 4));
 }
 
