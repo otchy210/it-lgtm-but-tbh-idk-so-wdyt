@@ -49,6 +49,7 @@ I don't want to add shorthand of proper noun, not so popular internet slang, vid
 -   1.0.4 [2022-12-14] Fix tiny UI bug / Focus on query form automatically
 -   1.0.5 [2022-12-15] Add AFK, BC, BFF, FWD
 -   1.1.0 [2022-12-16] Show description in the popup
+-   1.1.1 [2022-12-26] Add LMK, OOO
 
 ## Development
 

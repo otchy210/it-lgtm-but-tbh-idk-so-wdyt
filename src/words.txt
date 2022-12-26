@@ -19,6 +19,7 @@ IMHO    In my humble opinion
 IMO     In my opinion
 JFYI    Just for your information
 LGTM    Looks good to me
+LMK     Let me know
 LOL     Laugh out loud (https://en.wikipedia.org/wiki/LOL)
 MGMT    Management
 MINS    Minutes
@@ -27,6 +28,7 @@ NA      Not available
 NP      No problem
 NSFW    Not safe for work (https://en.wikipedia.org/wiki/Not_safe_for_work)
 NVM     Never mind
+OOO     Out of office
 OOTO    Out of the office
 PLS     Please
 POC     Point of contact
