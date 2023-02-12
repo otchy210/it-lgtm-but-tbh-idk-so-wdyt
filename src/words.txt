@@ -8,6 +8,7 @@ BC      Because
 BFF     Best friends forever
 BRB     Be right back
 BTW     By the way
+DFD     Date for a date
 EOD     End of day
 ETA     Estimated time of arrival
 FWD     Forward
@@ -40,6 +41,7 @@ PTO     Paid time off
 QQ      Quick question
 RSVP    Repondez s'il vous plait (https://en.wikipedia.org/wiki/RSVP)
 SGTM    Sounds good to me
+SME     Subject matter expert
 SMTH    Something
 SSOT    Single source of truth
 STH     Something
@@ -48,6 +50,7 @@ TBD     To be determined
 TBH     To be honest
 THO     Though
 THRU    Through
+THX     Thanks
 TIL     Today I learned
 TL;DR   Too long, didn't read (https://en.wikipedia.org/wiki/TL;DR)
 TLDR    Too long, didn't read (https://en.wikipedia.org/wiki/TL;DR)
@@ -59,3 +62,4 @@ W/O     Without
 WDYT    What do you think
 WIP     Work in progress
 WRT     With reference to
+YMMV    Your mileage may vary
